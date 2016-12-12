@@ -1,0 +1,69 @@
+._font-normal {
+  font-weight: normal;
+}
+
+._font-lighter {
+  font-weight: lighter;
+}
+
+._text-center {
+  text-align: center !important;
+}
+
+._text-white {
+  color: white;
+}
+
+._image-responsive {
+  max-width: 100%;
+}
+
+._flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+._max-width-65 {
+  max-width: 65em;
+}
+
+._margin-auto {
+  margin: auto;
+}
+
+._margin-0 {
+  margin: 0;
+}
+
+._margin-025-0 {
+  margin: 0.25em 0;
+}
+
+._margin-05-0 {
+  margin: 0.5em 0;
+}
+
+._padding05 {
+  padding: 0.5em;
+}
+
+._padding1 {
+  padding: 1em;
+}
+
+._padding2 {
+  padding: 2em;
+}
+
+._bgcolor1 {
+  background-color: $color-1;
+}
+
+._bgcolor2 {
+  background-color: $color-2;
+}
+
+._bgcolor3 {
+  background-color: $color-3;
+}

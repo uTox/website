@@ -1,0 +1,32 @@
+.platform-download {
+  & > .title,
+  & > .logo,
+  & > .button {
+    // display: flex;
+  }
+
+  & > .title {
+    //
+  }
+
+  & > .logo {
+    font-size: 10em;
+    padding-bottom: 0.15em;
+  }
+
+  & > .button {
+    border: $color-2 1px solid;
+    border-radius: 4px;
+    color: $color-2;
+    display: block;
+    font-size: 1.15em;
+    margin: 0.5em;
+    padding: 0.8em;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $color-2;
+      color: $color-1;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@mixin font-system {
+  // Use System UI Font (San Francisco on Mac, Segoe UI on Windows, Roboto on Android)
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
