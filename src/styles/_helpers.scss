@@ -6,12 +6,32 @@
   font-weight: lighter;
 }
 
+._font-x1-5 {
+  font-size: 1.5em;
+}
+
+._font-x2 {
+  font-size: 2em;
+}
+
+._font-x3 {
+  font-size: 3em;
+}
+
 ._text-center {
   text-align: center !important;
 }
 
 ._text-white {
   color: white;
+}
+
+._text-black {
+  color: black;
+}
+
+._text-clear-decoration {
+  text-decoration: none;
 }
 
 ._image-responsive {
