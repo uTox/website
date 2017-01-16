@@ -18,7 +18,7 @@ gulp.task('default', [
 
 // `gulp test` - Test everything
 gulp.task('test', [
-  'test:styles'
+  'test:styles',
   // 'test:scripts' // Javascript isn't used in uTox.org at this time
 ]);
 
@@ -51,7 +51,7 @@ gulp.task('serve', () => {
       directory: false
     },
     // Set to true to use localtunnel.me service
-    tunnel: true
+    // tunnel: true
   });
 });
 
