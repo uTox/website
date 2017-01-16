@@ -3,7 +3,7 @@ uTox.org
 
 [![License][license-img]][license-url]
 [![Open Issues][issues-img]][issues-url]
-[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)][graph-url]
+[![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)][graph-url]
 <!-- [![Version][version-img]][version-url] -->
 
 ## Quick Start
