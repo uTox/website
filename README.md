@@ -1,10 +1,10 @@
 uTox.org
 =======
 
-[![License][license-img]][license-url]
-[![Open Issues][issues-img]][issues-url]
-[![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)][graph-url]
-<!-- [![Version][version-img]][version-url] -->
+[![License][license-image]][license-url]
+[![Maintenance][maintenance-image]][graph-url]
+[![Open Issues][issues-image]][issues-url]
+[![Build Status][build-image]][build-url]
 
 ## Quick Start
 1. Install the requirements
@@ -88,12 +88,14 @@ Uses [RSCSS](http://rscss.io/) & [ITCSS Structure](https://speakerdeck.com/dafed
 
 
 [license-url]: https://github.com/uTox/uTox.org/blob/master/LICENSE
-[license-img]: https://img.shields.io/github/license/uTox/uTox.org.svg
-
-[version-url]: https://github.com/uTox/uTox.org/releases
-[version-img]: https://img.shields.io/github/release/uTox/uTox.org.svg
-
-[issues-url]: https://github.com/uTox/uTox.org/issues
-[issues-img]: https://img.shields.io/github/issues/uTox/uTox.org.svg
+[license-image]: https://img.shields.io/github/license/uTox/uTox.org.svg
 
 [graph-url]: https://github.com/uTox/uTox.org/graphs/contributors
+
+[maintenance-image]: https://img.shields.io/maintenance/yes/2017.svg
+
+[issues-url]: https://github.com/uTox/uTox.org/issues
+[issues-image]: https://img.shields.io/github/issues/uTox/uTox.org.svg
+
+[build-url]: https://travis-ci.org/uTox/website
+[build-image]:https://travis-ci.org/uTox/website.svg?branch=master
