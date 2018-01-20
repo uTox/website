@@ -13,7 +13,7 @@ Steps:
 
 The website works as is, no build step required. However, if you want to make changes to the CSS code you will need to follow the setup instructions below.
 
-## Build requirements
+## Build Requirements
 Check that you have node version 8 LTS or higher installed
 
 ```shell
@@ -64,12 +64,31 @@ $ yarn run build
   yarn run v1.3.2
   $ postcss -c postcss.config.js "public/assets/styles/!(_*|*.min).css" --ext .min.css --dir "public/asse
   ts/styles/"
-  √ Finished public\assets\styles\home.css (2.53 s)
-  √ Finished public\assets\styles\common.css (3.25 s)
+  √ Finished public/assets/styles/home.css (2.53 s)
+  √ Finished public/assets/styles/common.css (3.25 s)
   Done in 9.09s.
 ```
 
-This should produce a `.min.css` version of every css file in `public/assets/styles/` that doesn't begin with `_` or end with `.min.css`.
+This should produce a processed `.min.css` version of every css file in `public/assets/styles/` that doesn't begin with `_` or end with `.min.css`.
+
+## Local Development Server
+
+To preview/test out the site on your local development environment run
+
+```shell
+$ yarn run serve
+  yarn run v1.3.2
+  $ browser-sync start --config bs-config.js
+  [BrowserSync] Access URLs:
+   --------------------------------------
+         Local: http://localhost:3000
+      External: http://192.168.1.1:3000
+   --------------------------------------
+            UI: http://localhost:3001
+   UI External: http://192.168.1.1:3001
+   --------------------------------------
+  [BrowserSync] Serving files from: ./public/
+```
 
 [license-url]: https://github.com/uTox/website/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/uTox/website.svg
