@@ -4,60 +4,27 @@
   "version": "1.0.0",
   "description": "The uTox Website",
   "license": "MIT",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "flexboxgrid": "6.x",
-    "normalize.css": "5.x"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.17.6",
-    "gulp": "3.x",
-    "gulp-autoprefixer": "3.x",
-    "gulp-changed": "1.x",
-    "gulp-clean-css": "2.x",
-    "gulp-imagemin": "3.x",
-    "gulp-load-plugins": "1.x",
-    "gulp-nunjucks": "2.x",
-    "gulp-rename": "1.x",
-    "gulp-sass": "2.x",
-    "gulp-sourcemaps": "2.x",
-    "gulp-stylelint": "3.x",
-    "gulp-uglify": "2.x",
-    "gulp-webp": "2.x",
-    "gulp-xo": "0.x",
-    "stylelint": "7.x",
-    "stylelint-config-standard": "14.x",
-    "stylelint-rscss": "0.x",
-    "webpack-stream": "3.x",
-    "xo": "*"
+  "engines": {
+    "node": ">=8.x"
   },
   "scripts": {
-    "test": "gulp test",
-    "test:gulpfile": "xo gulpfile.js",
-    "serve": "gulp serve",
-    "build": "gulp",
-    "templates": "gulp templates",
-    "styles": "gulp styles",
-    "scripts": "gulp scripts",
-    "images": "gulp images",
-    "etc": "gulp etc",
-    "clean": "rm -r dist/"
+    "test": "stylelint \"**/!(*.min).css\"",
+    "serve": "browser-sync start --config bs-config.js",
+    "build": "postcss -c postcss.config.js \"public/assets/styles/!(_*|*.min).css\" --ext .min.css --dir \"public/assets/styles/\""
   },
-  "xo": {
-    "space": true,
-    "envs": [
-      "node",
-      "browser"
-    ]
+  "dependencies": {
+    "flexboxgrid": "6.3.1",
+    "normalize.css": "7.0.0"
   },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-standard",
-      "stylelint-rscss/config"
-    ],
-    "rules": {
-      "indentation": 2,
-      "declaration-block-properties-order": "alphabetical"
-    }
+  "devDependencies": {
+    "browser-sync": "2.23.5",
+    "postcss-clean": "1.1.0",
+    "postcss-cli": "4.1.1",
+    "postcss-import": "11.0.0",
+    "postcss-reporter": "5.0.0",
+    "stylelint": "8.4.0",
+    "stylelint-config-standard": "18.0.0",
+    "stylelint-order": "0.8.0",
+    "stylelint-rscss": "0.4.0"
   }
 }

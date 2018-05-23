@@ -1,101 +1,100 @@
-uTox.org
-=======
+μTox Website
+============
 
 [![License][license-image]][license-url]
-[![Maintenance][maintenance-image]][graph-url]
-[![Open Issues][issues-image]][issues-url]
 [![Build Status][build-image]][build-url]
+[![#utox on freenode][freenode-image]][freenode-url]
 
-## Quick Start
-1. Install the requirements
-  + NodeJS (version 6 LTS or newer) -> https://nodejs.org
-  + *Optional:* Gulp (globally) -> `npm install -g gulp-cli`
-2. Run `npm install` to install devDependencies for Gulp to work
-3. Run `npm run build` to build the project for the first time
-4. Run `npm run serve` to start a development server that will rebuild your CSS & JS on changes and inject the changes into your browser
+## Getting Started
 
-See the "Gulp" section of the documentation below for details on the build process
+Steps:
 
-## Usage
-+ [Gulp](#gulp)
-+ [HTML](#html)
-+ [CSS](#css)
-+ [Javascript](#javascript)
-+ [Images](#images)
-+ [Everything else](#everything-else)
+1. Nothing.
 
-### Gulp
-[Gulp](https://github.com/gulpjs/gulp) is a simple but powerful front-end build tool with plugins available for most developer work flows.
+The website works as is, no build step required. However, if you want to make changes to the CSS code you will need to follow the setup instructions below.
 
-gulpfile.js is well commented so you can easily figure out what each Gulp task does as well as customize it to your liking.
+## Build Requirements
+Check that you have node version 8 LTS or higher installed
 
-`npm run build` or `gulp`
-  + Runs all tasks (`test:styles`, `styles`, `test:scripts`, `scripts`, `images`, `etc`) except for `serve`
+```shell
+$ node -v
+  v8.x.x
+```
 
-`npm test` or `gulp test`
-  + Runs `test:styles` & `test:scripts`
+If not, then go to https://nodejs.org to download and install the latest LTS or Stable version of nodejs
 
-`npm run serve` or `gulp serve`
-  + Starts a web server using BrowserSync for local development
-  + Runs tasks when files in `src` are changed (e.g. `gulp styles` when files in `src/styles/` are modified)
+Next, Check that you have the latest stable version of yarn installed
 
-`npm run test:styles` or `gulp test:styles`
-  + Checks your scss/sass code with [stylelint](http://stylelint.io) (using the stylelint-config-standard & [RSCSS](http://rscss.io))
+```shell
+$ yarn -v
+  x.x.x
+```
+You can check which version is the latest stable and download it if you don't have it here: https://yarnpkg.com/en/docs/install
 
-`npm run styles` or `gulp styles`
-  + Builds your scss/sass to plain css
-  + Runs [autoprefixer]() (set to support the last 2 browser versions (google's policy))
-  + Minifies your css for a smaller file size
-  + Creates sourcemaps
-  + Outputs CSS files to the `dist` folder
+Once nodejs and yarn are installed, run `yarn` inside of the utox/website folder. You should get an output that looks somewhat like this
 
-`npm run test:scripts` or `gulp test:scripts`
-  + Checks your Javascript code with the [XO linter](https://github.com/sindresorhus/xo)
+```shell
+$ yarn
+  yarn install v1.3.2
+  [1/5] Validating package.json...
+  [2/5] Resolving packages...
+  [3/5] Fetching packages...
+  [4/5] Linking dependencies...
+  [5/5] Building fresh packages...
+  Done in 49.55s.
+```
 
-`npm run scripts` or `gulp scripts`
-  + Uses [webpack](https://webpack.github.io/docs/)
-  + Minifies your Javascript code for a smaller file size
-  + Creates sourcemaps
-  + Outputs Javascript files to the `dist` folder
+You are now ready to run the build scripts
 
-`npm run images:webp` or `gulp images:webp`
-  + Converts PNG & JPG files to WEBP
-  + Outputs WEBP files to the `dist` folder
+## Build CSS
 
-`npm run images` or `gulp images`
-  + Compresses PNG, JPG, GIF, and SVG files
-  + Outputs image files to the `dist` folder
+Before building the CSS code, run the css linter & format checker (via stylelint. *see .stylelint.yml for more details*) using the following command
 
-`npm run etc` or `gulp etc`
-  + Copies all other files to `dist` folder
+```shell
+$ yarn test
+  yarn run v1.3.2
+  $ stylelint "**/!(*.min).css"
+  Done in 7.00s.
+```
 
-### HTML
-[To Do]
+Assuming stylelint doesn't return any errors, you can now run the build command
 
-### CSS
-Uses [RSCSS](http://rscss.io/) & [ITCSS Structure](https://speakerdeck.com/dafed/managing-css-projects-with-itcss#49)
+```shell
+$ yarn run build
+  yarn run v1.3.2
+  $ postcss -c postcss.config.js "public/assets/styles/!(_*|*.min).css" --ext .min.css --dir "public/asse
+  ts/styles/"
+  √ Finished public/assets/styles/home.css (2.53 s)
+  √ Finished public/assets/styles/common.css (3.25 s)
+  Done in 9.09s.
+```
 
-[To Do]
+This should produce a processed `.min.css` version of every css file in `public/assets/styles/` that doesn't begin with `_` or end with `.min.css`.
 
-### Javascript
-[To Do]
+## Local Development Server
 
-### Images
-[To Do]
+To preview/test out the site on your local development environment run
 
-### Everything else
-[To Do]
+```shell
+$ yarn run serve
+  yarn run v1.3.2
+  $ browser-sync start --config bs-config.js
+  [BrowserSync] Access URLs:
+   --------------------------------------
+         Local: http://localhost:3000
+      External: http://192.168.1.1:3000
+   --------------------------------------
+            UI: http://localhost:3001
+   UI External: http://192.168.1.1:3001
+   --------------------------------------
+  [BrowserSync] Serving files from: ./public/
+```
 
-
-[license-url]: https://github.com/uTox/uTox.org/blob/master/LICENSE
-[license-image]: https://img.shields.io/github/license/uTox/uTox.org.svg
-
-[graph-url]: https://github.com/uTox/uTox.org/graphs/contributors
-
-[maintenance-image]: https://img.shields.io/maintenance/yes/2017.svg
-
-[issues-url]: https://github.com/uTox/uTox.org/issues
-[issues-image]: https://img.shields.io/github/issues/uTox/uTox.org.svg
+[license-url]: https://github.com/uTox/website/blob/master/LICENSE
+[license-image]: https://img.shields.io/github/license/uTox/website.svg
 
 [build-url]: https://travis-ci.org/uTox/website
 [build-image]:https://travis-ci.org/uTox/website.svg?branch=master
+
+[freenode-url]: https://webchat.freenode.net/?channels=%23utox
+[freenode-image]: https://img.shields.io/badge/freenode-%23utox-green.svg
